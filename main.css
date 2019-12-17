@@ -1,0 +1,376 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+body > section.page {
+    width: 100vw;
+    min-height: 100vh;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: none;
+}
+
+body.show-layout > section.page#about-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body.show-layout > section.page#skillset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: #000;
+}
+
+section.page h1 {
+    font-family: sans-serif;
+    font-size: 8vmin;
+    margin-bottom: 0;
+    color: rgb(153, 186, 46);
+}
+
+section.page p {
+    font-family: serif;
+    font-size: 5vmin;
+    width: 80vw;
+}
+
+#about-me h1 + p {
+    margin-top: 0;
+    text-align: center;
+}
+
+section.page h2 {
+    font-family: sans-serif;
+    font-size: 6vmin;
+    margin-bottom: 0;
+    color: rgb(153, 186, 46);
+}
+
+body.show-layout > section.page#last {
+    display: flex;
+}
+
+#welcome {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000 url('background-darker-draft.jpg') no-repeat scroll 50% 0px;
+    background-size: cover;
+}
+
+#about-me {
+    color: #fff;
+}
+
+#last {
+    background: #000 url('https://static.tornblads.se/background-draft.jpg') no-repeat scroll 50% 0px;
+    background-size: cover;
+}
+
+#scroll-down {
+    width: 12vmin;
+    height: 12vmin;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+#scroll-down > polyline {
+    stroke-width: 10px;
+    stroke: rgba(255, 255, 255, 0);
+    fill: none;
+}
+
+body.show-layout #top-arrow {
+    animation: top-arrow-anim 2s ease-in-out infinite;
+}
+
+body.show-layout #middle-arrow {
+    animation: middle-arrow-anim 2s ease-in-out infinite;
+}
+
+body.show-layout #bottom-arrow {
+    animation: bottom-arrow-anim 2s ease-in-out infinite;
+}
+
+@keyframes top-arrow-anim {
+    0%, 60%, 100% {
+        stroke: rgba(255, 255, 255, 0);
+    }
+
+    30% {
+        stroke: rgba(255, 255, 255, 1);
+    }
+}
+
+@keyframes middle-arrow-anim {
+    0%, 10%, 70%, 100% {
+        stroke: rgba(255, 255, 255, 0);
+    }
+
+    40% {
+        stroke: rgba(255, 255, 255, 1);
+    }
+}
+
+@keyframes bottom-arrow-anim {
+    0%, 20%, 80%, 100% {
+        stroke: rgba(255, 255, 255, 0);
+    }
+
+    50% {
+        stroke: rgba(255, 255, 255, 1);
+    }
+}
+
+#logo {
+    flex-grow: 1;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo p {
+    margin: 0;
+    opacity: 0;
+    font-family: serif;
+    font-size: 2vmin;
+}
+
+body.loaded #logo p {
+    animation: logo-p 3s ease-in-out forwards;
+    text-shadow: 0 0 0.5vmin black,
+                 -0.1vmin 0 0.4vmin black,
+                 0 -0.1vmin 0.4vmin black,
+                 0.1vmin 0 0.4vmin black,
+                 0 0.1vmin 0.4vmin black;
+}
+
+p.sub-logo {
+    text-align: center;
+}
+
+.my-name {
+    font-size: 3vmin;
+    color: rgb(255, 255, 255);
+}
+
+.my-slogan {
+    font-size: 2vmin;
+    font-style: italic;
+    color: rgb(153, 186, 46);
+}
+
+#animated-logo {
+    width: 40vmin;
+    height: 25vmin;
+    transform-origin: 50% 50%;
+}
+
+#animated-logo path {
+    fill: transparent;
+    stroke-width: 10px;
+    will-change: stroke, fill, stroke-dashoffset;
+}
+
+#left_bracket {
+    stroke-dasharray: 2360;
+    stroke-dashoffset: -2360;
+    stroke: #fff;
+}
+
+#letter_a {
+    stroke-dasharray: 2420;
+    stroke-dashoffset: -2420;
+    stroke: #fff;
+}
+
+#colon_top, #colon_bottom {
+    stroke-dasharray: 370;
+    stroke-dashoffset: -370;
+    stroke: #fff;
+}
+
+#letter_t {
+    stroke-dasharray: 2030;
+    stroke-dashoffset: -2030;
+    stroke: #fff;
+}
+
+#right_bracket {
+    stroke-dasharray: 2360;
+    stroke-dashoffset: -2360;
+    stroke: #fff;
+}
+
+
+body.loaded #animated-logo {
+    animation: logo-anim 3s ease-in-out forwards;
+}
+
+body.loaded #left_bracket {
+    animation: left-bracket-anim 3s ease-in-out forwards;
+}
+
+body.loaded #letter_a {
+    animation: letter-a-anim 3s ease-in-out forwards;
+}
+
+body.loaded #colon_top {
+    animation: colon-top-anim 3s ease-in-out forwards;
+}
+
+body.loaded #colon_bottom {
+    animation: colon-bottom-anim 3s ease-in-out forwards;
+}
+
+body.loaded #letter_t {
+    animation: letter-t-anim 3s ease-in-out forwards;
+}
+
+body.loaded #right_bracket {
+    animation: right-bracket-anim 3s ease-in-out forwards;
+}
+
+@keyframes logo-p {
+    0%, 80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes logo-anim {
+    0% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes left-bracket-anim {
+    0% {
+        stroke-dashoffset: -2360;
+        fill: rgba(153, 186, 46, 0);
+        stroke: rgba(255, 255, 255, 1);
+    }
+    30% {
+        stroke-dashoffset: 0;
+        fill: rgba(153, 186, 46, 0);
+    }
+    60%, 100% {
+        stroke-dashoffset: 0;
+        fill: rgba(153, 186, 46, 1);
+        stroke: rgba(0, 0, 0, 1);
+    }
+}
+
+@keyframes letter-a-anim {
+    0%, 10% {
+        stroke-dashoffset: -2420;
+        fill: rgba(255, 255, 255, 0);
+        stroke: rgba(153, 186, 46, 1);
+    }
+    40% {
+        stroke-dashoffset: 0;
+        fill: rgba(255, 255, 255, 0);
+    }
+    70%, 100% {
+        stroke-dashoffset: 0;
+        fill: rgba(255, 255, 255, 1);
+        stroke: rgba(0, 0, 0, 1);
+    }
+}
+
+@keyframes colon-top-anim {
+    0%, 18% {
+        stroke-dashoffset: -370;
+        fill: rgba(255, 255, 255, 0);
+        stroke: rgba(153, 186, 46, 1);
+    }
+    48% {
+        stroke-dashoffset: 0;
+        fill: rgba(255, 255, 255, 0);
+    }
+    78%, 100% {
+        stroke-dashoffset: 0;
+        fill: rgba(255, 255, 255, 1);
+        stroke: rgba(0, 0, 0, 1);
+    }
+}
+
+@keyframes colon-bottom-anim {
+    0%, 22% {
+        stroke-dashoffset: -370;
+        fill: rgba(255, 255, 255, 0);
+        stroke: rgba(153, 186, 46, 1);
+    }
+    52% {
+        stroke-dashoffset: 0;
+        fill: rgba(255, 255, 255, 0);
+    }
+    82%, 100% {
+        stroke-dashoffset: 0;
+        fill: rgba(255, 255, 255, 1);
+        stroke: rgba(0, 0, 0, 1);
+    }
+}
+
+@keyframes letter-t-anim {
+    30% {
+        stroke-dashoffset: -2030;
+        fill: rgba(255, 255, 255, 0);
+        stroke: rgba(153, 186, 46, 1);
+    }
+    60% {
+        stroke-dashoffset: 0;
+        fill: rgba(255, 255, 255, 0);
+    }
+    90%, 100% {
+        stroke-dashoffset: 0;
+        fill: rgba(255, 255, 255, 1);
+        stroke: rgba(0, 0, 0, 1);
+    }
+}
+
+@keyframes right-bracket-anim {
+    0%, 40% {
+        stroke-dashoffset: -2360;
+        fill: rgba(153, 186, 46, 0);
+        stroke: rgba(255, 255, 255, 1);
+    }
+    70% {
+        stroke-dashoffset: 0;
+        fill: rgba(153, 186, 46, 0);
+    }
+    100% {
+        stroke-dashoffset: 0;
+        fill: rgba(153, 186, 46, 1);
+        stroke: rgba(0, 0, 0, 1);
+    }
+}
